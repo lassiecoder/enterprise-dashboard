@@ -36,7 +36,7 @@ yarn dev
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view the application.
+[Click here](https://enterprise-dashboard-hthtjyzoc-lassiecoders-projects.vercel.app/) to view the application.
 
 ## 🏗️ Project Structure
 

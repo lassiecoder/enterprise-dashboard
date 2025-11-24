@@ -1,12 +1,13 @@
 "use client";
 
 import { MoreHorizontal, Folder, type LucideIcon } from "lucide-react";
+import { type IconType } from "react-icons";
 
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuTrigger
+  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import {
   SidebarGroup,
@@ -15,16 +16,16 @@ import {
   SidebarMenuAction,
   SidebarMenuButton,
   SidebarMenuItem,
-  useSidebar
+  useSidebar,
 } from "@/components/ui/sidebar";
 
 export function NavFavorites({
-  items
+  items,
 }: {
   items: {
     name: string;
     url: string;
-    icon?: LucideIcon;
+    icon?: LucideIcon | IconType;
   }[];
 }) {
   const { isMobile } = useSidebar();
