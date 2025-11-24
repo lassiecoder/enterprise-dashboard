@@ -8,17 +8,17 @@ import {
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
-  BreadcrumbPage
+  BreadcrumbPage,
 } from "@/components/ui/breadcrumb";
 import {
   SidebarInset,
   SidebarProvider,
-  SidebarTrigger
+  SidebarTrigger,
 } from "@/components/ui/sidebar";
 import {
   RightSidebarProvider,
   RightSidebarInset,
-  RightSidebarTrigger
+  RightSidebarTrigger,
 } from "@/components/ui/rightsidebar";
 import {
   Star,
@@ -27,7 +27,7 @@ import {
   ArrowUpDown,
   Calendar,
   History,
-  Bell
+  Bell,
 } from "lucide-react";
 import { ThemeToggle } from "../theme-toggle";
 import SearchBar from "@/components/ui/searchbar";
@@ -51,7 +51,7 @@ const orders: Order[] = [
     project: "Landing Page",
     address: "Meadow Lane Oakland",
     date: "Just now",
-    status: "In Progress"
+    status: "In Progress",
   },
   {
     id: "#CM9802",
@@ -59,7 +59,7 @@ const orders: Order[] = [
     project: "CRM Admin pages",
     address: "Larry San Francisco",
     date: "A minute ago",
-    status: "Complete"
+    status: "Complete",
   },
   {
     id: "#CM9803",
@@ -67,7 +67,7 @@ const orders: Order[] = [
     project: "Client Project",
     address: "Bagwell Avenue Ocala",
     date: "1 hour ago",
-    status: "Pending"
+    status: "Pending",
   },
   {
     id: "#CM9804",
@@ -75,7 +75,7 @@ const orders: Order[] = [
     project: "Admin Dashboard",
     address: "Washburn Baton Rouge",
     date: "Yesterday",
-    status: "Approved"
+    status: "Approved",
   },
   {
     id: "#CM9805",
@@ -83,7 +83,7 @@ const orders: Order[] = [
     project: "App Landing Page",
     address: "Nest Lane Olivette",
     date: "Feb 2, 2023",
-    status: "Rejected"
+    status: "Rejected",
   },
   {
     id: "#CM9801",
@@ -91,7 +91,7 @@ const orders: Order[] = [
     project: "Landing Page",
     address: "Meadow Lane Oakland",
     date: "Just now",
-    status: "In Progress"
+    status: "In Progress",
   },
   {
     id: "#CM9802",
@@ -99,7 +99,7 @@ const orders: Order[] = [
     project: "CRM Admin pages",
     address: "Larry San Francisco",
     date: "A minute ago",
-    status: "Complete"
+    status: "Complete",
   },
   {
     id: "#CM9803",
@@ -107,7 +107,7 @@ const orders: Order[] = [
     project: "Client Project",
     address: "Bagwell Avenue Ocala",
     date: "1 hour ago",
-    status: "Pending"
+    status: "Pending",
   },
   {
     id: "#CM9804",
@@ -115,7 +115,7 @@ const orders: Order[] = [
     project: "Admin Dashboard",
     address: "Washburn Baton Rouge",
     date: "Yesterday",
-    status: "Approved"
+    status: "Approved",
   },
   {
     id: "#CM9805",
@@ -123,7 +123,7 @@ const orders: Order[] = [
     project: "App Landing Page",
     address: "Nest Lane Olivette",
     date: "Feb 2, 2023",
-    status: "Rejected"
+    status: "Rejected",
   },
   {
     id: "#CM9806",
@@ -131,7 +131,7 @@ const orders: Order[] = [
     project: "Website Redesign",
     address: "Grove Street Miami",
     date: "Feb 3, 2023",
-    status: "In Progress"
+    status: "In Progress",
   },
   {
     id: "#CM9807",
@@ -139,7 +139,7 @@ const orders: Order[] = [
     project: "E-commerce Platform",
     address: "Ocean Drive Seattle",
     date: "Feb 4, 2023",
-    status: "Complete"
+    status: "Complete",
   },
   {
     id: "#CM9808",
@@ -147,7 +147,7 @@ const orders: Order[] = [
     project: "Mobile App",
     address: "Park Avenue Boston",
     date: "Feb 5, 2023",
-    status: "Pending"
+    status: "Pending",
   },
   {
     id: "#CM9809",
@@ -155,7 +155,7 @@ const orders: Order[] = [
     project: "Dashboard UI",
     address: "Main Street Austin",
     date: "Feb 6, 2023",
-    status: "Approved"
+    status: "Approved",
   },
   {
     id: "#CM9810",
@@ -163,7 +163,7 @@ const orders: Order[] = [
     project: "Marketing Site",
     address: "Broadway New York",
     date: "Feb 7, 2023",
-    status: "Complete"
+    status: "Complete",
   },
   {
     id: "#CM9811",
@@ -171,7 +171,7 @@ const orders: Order[] = [
     project: "Blog Platform",
     address: "Highland Avenue Portland",
     date: "Feb 8, 2023",
-    status: "In Progress"
+    status: "In Progress",
   },
   {
     id: "#CM9812",
@@ -179,7 +179,7 @@ const orders: Order[] = [
     project: "Analytics Dashboard",
     address: "River Road Denver",
     date: "Feb 9, 2023",
-    status: "Pending"
+    status: "Pending",
   },
   {
     id: "#CM9813",
@@ -187,7 +187,7 @@ const orders: Order[] = [
     project: "Social Media App",
     address: "Lake Street Chicago",
     date: "Feb 10, 2023",
-    status: "Rejected"
+    status: "Rejected",
   },
   {
     id: "#CM9814",
@@ -195,7 +195,7 @@ const orders: Order[] = [
     project: "CRM System",
     address: "Hill Drive Phoenix",
     date: "Feb 11, 2023",
-    status: "Approved"
+    status: "Approved",
   },
   {
     id: "#CM9815",
@@ -203,7 +203,7 @@ const orders: Order[] = [
     project: "Portfolio Website",
     address: "Sunset Boulevard LA",
     date: "Feb 12, 2023",
-    status: "Complete"
+    status: "Complete",
   },
   {
     id: "#CM9816",
@@ -211,7 +211,7 @@ const orders: Order[] = [
     project: "Video Streaming",
     address: "Cedar Lane Dallas",
     date: "Feb 13, 2023",
-    status: "In Progress"
+    status: "In Progress",
   },
   {
     id: "#CM9817",
@@ -219,7 +219,7 @@ const orders: Order[] = [
     project: "Payment Gateway",
     address: "Maple Street Houston",
     date: "Feb 14, 2023",
-    status: "Pending"
+    status: "Pending",
   },
   {
     id: "#CM9818",
@@ -227,7 +227,7 @@ const orders: Order[] = [
     project: "Booking System",
     address: "Oak Avenue Atlanta",
     date: "Feb 15, 2023",
-    status: "Complete"
+    status: "Complete",
   },
   {
     id: "#CM9819",
@@ -235,7 +235,7 @@ const orders: Order[] = [
     project: "Inventory Management",
     address: "Pine Road Tampa",
     date: "Feb 16, 2023",
-    status: "Approved"
+    status: "Approved",
   },
   {
     id: "#CM9820",
@@ -243,7 +243,7 @@ const orders: Order[] = [
     project: "Learning Platform",
     address: "Elm Court Detroit",
     date: "Feb 17, 2023",
-    status: "In Progress"
+    status: "In Progress",
   },
   {
     id: "#CM9821",
@@ -251,7 +251,7 @@ const orders: Order[] = [
     project: "Chat Application",
     address: "Birch Lane Philadelphia",
     date: "Feb 18, 2023",
-    status: "Pending"
+    status: "Pending",
   },
   {
     id: "#CM9822",
@@ -259,7 +259,7 @@ const orders: Order[] = [
     project: "Forum Website",
     address: "Willow Drive Minneapolis",
     date: "Feb 19, 2023",
-    status: "Rejected"
+    status: "Rejected",
   },
   {
     id: "#CM9823",
@@ -267,7 +267,7 @@ const orders: Order[] = [
     project: "Event Management",
     address: "Cherry Street Nashville",
     date: "Feb 20, 2023",
-    status: "Complete"
+    status: "Complete",
   },
   {
     id: "#CM9824",
@@ -275,7 +275,7 @@ const orders: Order[] = [
     project: "HR Portal",
     address: "Aspen Way Sacramento",
     date: "Feb 21, 2023",
-    status: "Approved"
+    status: "Approved",
   },
   {
     id: "#CM9825",
@@ -283,8 +283,8 @@ const orders: Order[] = [
     project: "Survey Tool",
     address: "Spruce Circle Kansas City",
     date: "Feb 22, 2023",
-    status: "In Progress"
-  }
+    status: "In Progress",
+  },
 ];
 
 const statusColors = {
@@ -292,56 +292,65 @@ const statusColors = {
   Complete: { text: "#4AA785", bg: "#4AA785" },
   Pending: { text: "#59A8D4", bg: "#59A8D4" },
   Approved: { text: "#FFC555", bg: "#FFC555" },
-  Rejected: { text: "#A0A0A0", bg: "#A0A0A0" }
+  Rejected: { text: "#A0A0A0", bg: "#A0A0A0" },
 };
 
 export default function OrderListPage() {
-  const [selectedOrders, setSelectedOrders] = useState<Set<number>>(new Set());
+  // State management for order selection, filtering, and pagination
+  const [selectedOrders, setSelectedOrders] = useState<Set<number>>(new Set()); // Stores indices of selected orders
   const [statusFilter, setStatusFilter] = useState<Set<Order["status"]>>(
     new Set()
-  );
-  const [showFilterDropdown, setShowFilterDropdown] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [sortOrder, setSortOrder] = useState<"asc" | "desc" | null>(null);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [debouncedSearch, setDebouncedSearch] = useState("");
-  const filterDropdownRef = useRef<HTMLDivElement>(null);
-  const itemsPerPage = 10;
+  ); // Active status filters (can be multiple)
+  const [showFilterDropdown, setShowFilterDropdown] = useState(false); // Controls filter dropdown visibility
+  const [currentPage, setCurrentPage] = useState(1); // Current pagination page
+  const [sortOrder, setSortOrder] = useState<"asc" | "desc" | null>(null); // Date sort: asc/desc/none
+  const [searchQuery, setSearchQuery] = useState(""); // Real-time search input
+  const [debouncedSearch, setDebouncedSearch] = useState(""); // Debounced search (300ms delay)
+  const filterDropdownRef = useRef<HTMLDivElement>(null); // Ref for click-outside detection
+  const itemsPerPage = 10; // Number of orders per page // Number of orders per page
 
+  /**
+   * Parses various date string formats into Date objects for sorting
+   * Handles relative dates ("Just now", "Yesterday") and absolute dates ("Feb 2, 2023")
+   */
   const parseDate = (dateStr: string): Date => {
     const now = new Date();
     if (dateStr === "Just now") return now;
-    if (dateStr === "A minute ago") return new Date(now.getTime() - 60000);
+    if (dateStr === "A minute ago") return new Date(now.getTime() - 60000); // 1 minute ago
     if (dateStr.includes("hour ago")) {
       const hours = parseInt(dateStr);
-      return new Date(now.getTime() - hours * 3600000);
+      return new Date(now.getTime() - hours * 3600000); // N hours ago
     }
-    if (dateStr === "Yesterday") return new Date(now.getTime() - 86400000);
-    return new Date(dateStr);
+    if (dateStr === "Yesterday") return new Date(now.getTime() - 86400000); // 24 hours ago
+    return new Date(dateStr); // Parse absolute date string
   };
 
+  // Filter orders by status and search query (min 3 characters)
   const filteredOrders = orders.filter((order) => {
     const matchesStatus =
-      statusFilter.size === 0 || statusFilter.has(order.status);
+      statusFilter.size === 0 || statusFilter.has(order.status); // Show all if no filter selected
     const matchesSearch =
-      debouncedSearch.length < 3 ||
+      debouncedSearch.length < 3 || // Skip search if less than 3 chars
       order.project.toLowerCase().includes(debouncedSearch.toLowerCase());
     return matchesStatus && matchesSearch;
   });
 
+  // Sort orders by date if sort order is selected
   const sortedOrders = sortOrder
     ? [...filteredOrders].sort((a, b) => {
         const dateA = parseDate(a.date).getTime();
         const dateB = parseDate(b.date).getTime();
-        return sortOrder === "asc" ? dateA - dateB : dateB - dateA;
+        return sortOrder === "asc" ? dateA - dateB : dateB - dateA; // Ascending or descending
       })
-    : filteredOrders;
+    : filteredOrders; // No sorting if sortOrder is null
 
+  // Pagination: Calculate pages and slice orders for current page
   const totalPages = Math.ceil(sortedOrders.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const paginatedOrders = sortedOrders.slice(startIndex, endIndex);
 
+  // Effect: Close filter dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -361,55 +370,72 @@ export default function OrderListPage() {
     };
   }, [showFilterDropdown]);
 
+  // Effect: Debounce search input (wait 300ms after typing stops)
   useEffect(() => {
     const timer = setTimeout(() => {
       setDebouncedSearch(searchQuery);
     }, 300);
 
-    return () => clearTimeout(timer);
+    return () => clearTimeout(timer); // Clear timeout on cleanup
   }, [searchQuery]);
 
+  /**
+   * Handles "Select All" checkbox in table header
+   * Selects/deselects all orders on the current page
+   */
   const handleSelectAll = (checked: boolean) => {
     if (checked) {
       const newSelected = new Set(selectedOrders);
       paginatedOrders.forEach((_, idx) => {
-        newSelected.add(startIndex + idx);
+        newSelected.add(startIndex + idx); // Add global index (not page index)
       });
       setSelectedOrders(newSelected);
     } else {
       const newSelected = new Set(selectedOrders);
       paginatedOrders.forEach((_, idx) => {
-        newSelected.delete(startIndex + idx);
+        newSelected.delete(startIndex + idx); // Remove from selection
       });
       setSelectedOrders(newSelected);
     }
   };
 
+  /**
+   * Toggles a status filter on/off
+   * Resets to page 1 when filter changes
+   */
   const toggleStatusFilter = (status: Order["status"]) => {
     const newFilter = new Set(statusFilter);
     if (newFilter.has(status)) {
-      newFilter.delete(status);
+      newFilter.delete(status); // Remove filter
     } else {
-      newFilter.add(status);
+      newFilter.add(status); // Add filter
     }
     setStatusFilter(newFilter);
-    setCurrentPage(1);
+    setCurrentPage(1); // Reset pagination
   };
 
+  /**
+   * Handles search input changes
+   * Resets to page 1 when search query changes
+   */
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
-    setCurrentPage(1);
+    setCurrentPage(1); // Reset pagination
   };
 
+  /**
+   * Cycles through sort states: null → desc → asc → null
+   * null: no sorting, desc: newest first, asc: oldest first
+   */
   const toggleSort = () => {
     if (sortOrder === null) {
-      setSortOrder("desc");
+      setSortOrder("desc"); // First click: newest first
     } else if (sortOrder === "desc") {
-      setSortOrder("asc");
+      setSortOrder("asc"); // Second click: oldest first
     } else {
-      setSortOrder(null);
+      setSortOrder(null); // Third click: remove sorting
     }
-    setCurrentPage(1);
+    setCurrentPage(1); // Reset pagination
   };
 
   const handleSelectOrder = (idx: number, checked: boolean) => {
@@ -511,7 +537,7 @@ export default function OrderListPage() {
                                   <span
                                     className="inline-block w-2 h-2 rounded-full"
                                     style={{
-                                      backgroundColor: statusColors[status].bg
+                                      backgroundColor: statusColors[status].bg,
                                     }}
                                   />
                                   {status}
@@ -654,7 +680,7 @@ export default function OrderListPage() {
                             <span
                               className="inline-block w-2 h-2 rounded-full"
                               style={{
-                                backgroundColor: statusColors[order.status].bg
+                                backgroundColor: statusColors[order.status].bg,
                               }}
                             />
                             <span

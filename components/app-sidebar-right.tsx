@@ -1,44 +1,53 @@
 "use client";
 
 import * as React from "react";
-import { PanelRightIcon, X, Bug, User, Wifi } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Sidebar, useRightSidebar } from "@/components/ui/rightsidebar";
+import { Bug, User, Wifi } from "lucide-react";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Sidebar } from "@/components/ui/rightsidebar";
 
 const notifications = [
   { title: "You have a bug that needs...", time: "Just now", icon: Bug },
   { title: "New user registered", time: "59 minutes ago", icon: User },
   { title: "You have a bug that needs...", time: "12 hours ago", icon: Bug },
-  { title: "Andi Lane subscribed to you", time: "Today, 11:59 AM", icon: Wifi }
+  { title: "Andi Lane subscribed to you", time: "Today, 11:59 AM", icon: Wifi },
 ];
 
 const activities = [
   {
     who: "You have a bug that needs...",
     when: "Just now",
-    avatar: "/sample-user-1.jpg"
+    avatar: "/sample-user-1.jpg",
   },
   {
     who: "Released a new version",
     when: "59 minutes ago",
-    avatar: "/sample-user-2.jpg"
+    avatar: "/sample-user-2.jpg",
   },
   {
     who: "Submitted a bug",
     when: "12 hours ago",
-    avatar: "/sample-user-3.jpg"
+    avatar: "/sample-user-3.jpg",
   },
   {
     who: "Modified A data in Page X",
     when: "Today, 11:59 AM",
-    avatar: "/sample-user-1.jpg"
+    avatar: "/sample-user-1.jpg",
   },
   {
     who: "Deleted a page in Project X",
     when: "Feb 2, 2023",
-    avatar: "/sample-user-2.jpg"
-  }
+    avatar: "/sample-user-2.jpg",
+  },
+];
+
+// Predefined colors for contacts to avoid hydration mismatch
+const contactColors = [
+  "#8B5CF6", // purple
+  "#EC4899", // pink
+  "#3B82F6", // blue
+  "#10B981", // green
+  "#F59E0B", // amber
+  "#6366F1", // indigo
 ];
 
 const contacts = [
@@ -47,17 +56,12 @@ const contacts = [
   "Orlando Diggs",
   "Andi Lane",
   "Kate Morrison",
-  "Koray Okumus"
+  "Koray Okumus",
 ];
 
 export function AppSidebarRight({
   ...props
 }: React.ComponentProps<typeof Sidebar>) {
-  const { setOpen } = useRightSidebar();
-
-  function randomColor() {
-    return "#" + Math.floor(Math.random() * 16777215).toString(16);
-  }
   return (
     <Sidebar side="right" collapsible="offcanvas" {...props}>
       <div className="p-4">
@@ -83,7 +87,7 @@ export function AppSidebarRight({
                   <div
                     className="flex  items-center justify-center px-1.5 py-1.5   rounded-md bg-muted/60"
                     style={{
-                      backgroundColor: idx % 2 === 0 ? "#E3F5FF" : "#E5ECF6"
+                      backgroundColor: idx % 2 === 0 ? "#E3F5FF" : "#E5ECF6",
                     }}
                   >
                     <Icon size={18} className="text-black" />
@@ -111,11 +115,9 @@ export function AppSidebarRight({
               <div key={i} className="flex items-start gap-3">
                 <div className="relative">
                   <Avatar className="size-8">
-                    {a.avatar ? (
-                      <AvatarImage src={a.avatar} alt={a.who} />
-                    ) : (
-                      <AvatarFallback>{a.who.charAt(0)}</AvatarFallback>
-                    )}
+                    <AvatarFallback delayMs={0}>
+                      {a.who.charAt(0)}
+                    </AvatarFallback>
                   </Avatar>
                   {/* connector line: show for every item except the last */}
                   {i !== activities.length - 1 && (
@@ -138,7 +140,10 @@ export function AppSidebarRight({
             {contacts.map((c, i) => (
               <div key={i} className="flex items-center gap-3">
                 <Avatar>
-                  <AvatarFallback style={{ backgroundColor: randomColor() }}>
+                  <AvatarFallback
+                    delayMs={0}
+                    style={{ backgroundColor: contactColors[i] }}
+                  >
                     {c.charAt(0)}
                   </AvatarFallback>
                 </Avatar>

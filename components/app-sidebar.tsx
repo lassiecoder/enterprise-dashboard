@@ -11,41 +11,46 @@ import {
   IdCard,
   Users,
   BookText,
-  MessagesSquare
+  MessagesSquare,
 } from "lucide-react";
 import { TbPointFilled } from "react-icons/tb";
 
 import { NavFavorites } from "@/components/nav-favorites";
 import { NavMain } from "@/components/nav-main";
 import { NavProjects } from "@/components/nav-projects";
-import { NavUser } from "@/components/nav-user";
 import { TeamSwitcher } from "@/components/team-switcher";
-import Image from "next/image";
 import {
   Sidebar,
   SidebarContent,
   SidebarHeader,
-  SidebarRail
+  SidebarRail,
 } from "@/components/ui/sidebar";
 
+/**
+ * Sidebar navigation configuration data
+ * Contains all navigation items, favorites, and page links
+ */
 const data = {
+  // User profile information (currently placeholder)
   user: {
     name: "shadcn",
     email: "m@example.com",
-    avatar: ""
+    avatar: "",
   },
+  // Team/Organization switcher configuration
   teams: [
     {
       name: "ByeWind",
-      logo: GalleryVerticalEnd
-    }
+      logo: GalleryVerticalEnd,
+    },
   ],
+  // Main navigation items with nested sub-items
   navMain: [
     {
       title: "Default",
       url: "/dashboard",
       icon: PieChart,
-      isActive: false
+      isActive: false,
     },
     {
       title: "eCommerce",
@@ -55,17 +60,13 @@ const data = {
       items: [
         {
           title: "History",
-          url: "#"
+          url: "#",
         },
         {
           title: "Order List",
-          url: "/order-list"
-        }
-        // {
-        //   title: "Settings",
-        //   url: "#"
-        // }
-      ]
+          url: "/order-list",
+        },
+      ],
     },
     {
       title: "Projects",
@@ -74,17 +75,17 @@ const data = {
       items: [
         {
           title: "Genesis",
-          url: "#"
+          url: "#",
         },
         {
           title: "Explorer",
-          url: "#"
+          url: "#",
         },
         {
           title: "Quantum",
-          url: "#"
-        }
-      ]
+          url: "#",
+        },
+      ],
     },
     {
       title: "Online Courses",
@@ -93,35 +94,37 @@ const data = {
       items: [
         {
           title: "Introduction",
-          url: "#"
+          url: "#",
         },
         {
           title: "Get Started",
-          url: "#"
+          url: "#",
         },
         {
           title: "Tutorials",
-          url: "#"
+          url: "#",
         },
         {
           title: "Changelog",
-          url: "#"
-        }
-      ]
-    }
+          url: "#",
+        },
+      ],
+    },
   ],
+  // Quick access favorites shown at the top of sidebar
   favorites: [
     {
       name: "Overview",
       url: "/overview",
-      icon: TbPointFilled
+      icon: TbPointFilled,
     },
     {
       name: "Projects",
       url: "#",
-      icon: TbPointFilled
-    }
+      icon: TbPointFilled,
+    },
   ],
+  // Additional pages section with collapsible sub-items
   pages: [
     {
       title: "User Profile",
@@ -131,17 +134,17 @@ const data = {
       items: [
         {
           title: "History",
-          url: "#"
+          url: "#",
         },
         {
           title: "Starred",
-          url: "#"
+          url: "#",
         },
         {
           title: "Settings",
-          url: "#"
-        }
-      ]
+          url: "#",
+        },
+      ],
     },
     {
       title: "Account",
@@ -151,17 +154,17 @@ const data = {
       items: [
         {
           title: "History",
-          url: "#"
+          url: "#",
         },
         {
           title: "Starred",
-          url: "#"
+          url: "#",
         },
         {
           title: "Settings",
-          url: "#"
-        }
-      ]
+          url: "#",
+        },
+      ],
     },
     {
       title: "Corporate",
@@ -171,17 +174,17 @@ const data = {
       items: [
         {
           title: "History",
-          url: "#"
+          url: "#",
         },
         {
           title: "Starred",
-          url: "#"
+          url: "#",
         },
         {
           title: "Settings",
-          url: "#"
-        }
-      ]
+          url: "#",
+        },
+      ],
     },
     {
       title: "Blogs",
@@ -191,17 +194,17 @@ const data = {
       items: [
         {
           title: "History",
-          url: "#"
+          url: "#",
         },
         {
           title: "Starred",
-          url: "#"
+          url: "#",
         },
         {
           title: "Settings",
-          url: "#"
-        }
-      ]
+          url: "#",
+        },
+      ],
     },
     {
       title: "Social",
@@ -211,21 +214,28 @@ const data = {
       items: [
         {
           title: "History",
-          url: "#"
+          url: "#",
         },
         {
           title: "Starred",
-          url: "#"
+          url: "#",
         },
         {
           title: "Settings",
-          url: "#"
-        }
-      ]
-    }
-  ]
+          url: "#",
+        },
+      ],
+    },
+  ],
 };
 
+/**
+ * AppSidebar Component
+ *
+ * Main navigation sidebar with collapsible functionality
+ * Displays favorites, main navigation, and pages sections
+ * Can collapse to icon-only view for more screen space
+ */
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="icon" {...props}>

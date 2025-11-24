@@ -6,33 +6,49 @@ import {
   ChartConfig,
   ChartContainer,
   ChartTooltip,
-  ChartTooltipContent
+  ChartTooltipContent,
 } from "@/components/ui/chart";
 
 export const description = "A multiple line chart";
 
-// Values are in whole units (cents/units). Use large numbers so axis shows Millions.
+/**
+ * Revenue chart data for current week vs previous week comparison
+ * Values are in cents/base units (multiply by 1M for display)
+ * This allows Y-axis to show "10M", "20M" etc. for better readability
+ */
 const chartData = [
   { month: "January", desktop: 18600000, mobile: 8000000 },
   { month: "February", desktop: 30500000, mobile: 20000000 },
   { month: "March", desktop: 23700000, mobile: 12000000 },
   { month: "April", desktop: 7300000, mobile: 19000000 },
   { month: "May", desktop: 20900000, mobile: 13000000 },
-  { month: "June", desktop: 21400000, mobile: 14000000 }
+  { month: "June", desktop: 21400000, mobile: 14000000 },
 ];
 
+/**
+ * Chart configuration defining line colors and labels
+ * Uses CSS custom properties for theme-aware colors
+ * Note: "desktop" = Current Week, "mobile" = Previous Week (naming from chart library)
+ */
 const chartConfig = {
   desktop: {
     label: "Current Week",
-    // color: "var(--chart-1)"
-    color: "var(--revenue-current-week)"
+    color: "var(--revenue-current-week)", // CSS variable from theme
   },
   mobile: {
     label: "Previous Week",
-    color: "var(--revenue-previous-week)"
-  }
+    color: "var(--revenue-previous-week)", // CSS variable from theme
+  },
 } satisfies ChartConfig;
 
+/**
+ * RevenueGraph Component
+ *
+ * Displays a dual-line chart comparing current week vs previous week revenue
+ * - Y-axis shows revenue in millions (M)
+ * - X-axis shows months (abbreviated to 3 letters)
+ * - Responsive and theme-aware
+ */
 export function RevenueGraph() {
   return (
     <ChartContainer config={chartConfig}>
@@ -44,7 +60,7 @@ export function RevenueGraph() {
           top: 8,
           bottom: 8,
           left: 12,
-          right: 12
+          right: 12,
         }}
       >
         <YAxis

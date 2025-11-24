@@ -6,18 +6,16 @@ import {
   BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbPage,
-  BreadcrumbSeparator
 } from "@/components/ui/breadcrumb";
-import { Separator } from "@/components/ui/separator";
 import {
   SidebarInset,
   SidebarProvider,
-  SidebarTrigger
+  SidebarTrigger,
 } from "@/components/ui/sidebar";
 import {
   RightSidebarProvider,
   RightSidebarInset,
-  RightSidebarTrigger
+  RightSidebarTrigger,
 } from "@/components/ui/rightsidebar";
 import { Star, History, Bell } from "lucide-react";
 import EcommerceCards from "@/components/ecommerce-cards";
@@ -51,40 +49,18 @@ export default function Page() {
                 </BreadcrumbList>
               </Breadcrumb>
             </div>
-            {/* --- */}
             <div className="flex items-center gap-4 px-4">
-              <Breadcrumb>
-                <BreadcrumbList>
-                  <BreadcrumbItem>
-                    {/* <BreadcrumbLink href="#">search bar...</BreadcrumbLink> */}
-                    <SearchBar
-                      value={""}
-                      // onChange={() => {}}
-                      placeholder="Search..."
-                    />
-                  </BreadcrumbItem>
-                </BreadcrumbList>
-              </Breadcrumb>
+              <SearchBar value={""} placeholder="Search..." />
               <ThemeToggle />
-              {/* <History className="h-4 w-4 sm:h-5 sm:w-5" />
-              <Bell className="h-4 w-4 sm:h-5 sm:w-5" /> */}
               <History className="hidden lg:block h-4 w-4 sm:h-5 sm:w-5" />
               <Bell className="hidden lg:block h-4 w-4 sm:h-5 sm:w-5" />
-
               <RightSidebarTrigger className="-ml-1" />
             </div>
-            {/* --- */}
           </header>
           <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
             <EcommerceCards />
             <RevenueAndRevenueByLocation />
             <TopSellingProductsAndTotalSales />
-            {/* <div className="grid auto-rows-min gap-4 md:grid-cols-3">
-              <div className="bg-muted/50 aspect-video rounded-xl" />
-              <div className="bg-muted/50 aspect-video rounded-xl" />
-              <div className="bg-muted/50 aspect-video rounded-xl" />
-            </div> */}
-            {/* <div className="bg-muted/50 min-h-screen flex-1 rounded-xl md:min-h-min" /> */}
           </div>
         </SidebarInset>
       </SidebarProvider>

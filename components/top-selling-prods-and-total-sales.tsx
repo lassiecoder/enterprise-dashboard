@@ -3,6 +3,7 @@
 import React from "react";
 import { TotalSalesPieChart } from "./charts/TotalSalesPieChart";
 
+/** Product data structure for top selling products table */
 type Product = {
   name: string;
   price: number;
@@ -10,54 +11,68 @@ type Product = {
   amount: number;
 };
 
+/** Sales channel data structure for pie chart */
 type SalesChannel = {
   name: string;
   value: number;
-  color: string;
+  color: string; // CSS variable or hex color
 };
 
+/** Default product data - top 5 selling products */
 const defaultProducts: Product[] = [
   {
     name: "ASOS Ridley High Waist",
     price: 79.49,
     quantity: 82,
-    amount: 6518.18
+    amount: 6518.18,
   },
   {
     name: "Marco Lightweight Shirt",
     price: 128.5,
     quantity: 37,
-    amount: 4754.5
+    amount: 4754.5,
   },
   { name: "Half Sleeve Shirt", price: 39.99, quantity: 64, amount: 2559.36 },
   { name: "Lightweight Jacket", price: 20.0, quantity: 184, amount: 3680.0 },
-  { name: "Marco Shoes", price: 79.49, quantity: 64, amount: 1965.81 }
+  { name: "Marco Shoes", price: 79.49, quantity: 64, amount: 1965.81 },
 ];
 
 const defaultSalesChannels: SalesChannel[] = [
   { name: "Direct", value: 300.56, color: "var(--sales-chart-1)" },
   { name: "Affilliate", value: 135.18, color: "var(--sales-chart-3)" },
   { name: "Sponsored", value: 154.02, color: "var(--sales-chart-2)" },
-  { name: "E-mail", value: 48.96, color: "var(--sales-chart-4)" }
+  { name: "E-mail", value: 48.96, color: "var(--sales-chart-4)" },
 ];
 
+/**
+ * TopSellingProductsAndTotalSales Component
+ *
+ * Displays two main sections:
+ * 1. Left: Table of top selling products with price, quantity, and total amount
+ * 2. Right: Donut chart showing sales breakdown by channel (Direct, Affiliate, etc.)
+ *
+ * @param products - Array of product data (defaults to defaultProducts)
+ * @param salesChannels - Array of sales channel data (defaults to defaultSalesChannels)
+ */
 export default function TopSellingProductsAndTotalSales({
   products = defaultProducts,
-  salesChannels = defaultSalesChannels
+  salesChannels = defaultSalesChannels,
 }: {
   products?: Product[];
   salesChannels?: SalesChannel[];
 }) {
+  // Calculate total sales for percentage calculations
   const totalSales = salesChannels.reduce((sum, ch) => sum + ch.value, 0);
 
-  // Calculate donut chart paths
+  // Donut chart configuration (currently calculated but not used - chart uses Recharts)
   const radius = 80;
   const centerX = 120;
   const centerY = 120;
   const strokeWidth = 40;
 
-  let currentAngle = -90; // Start at top
+  let currentAngle = -90; // Start at top (12 o'clock position)
 
+  // Calculate SVG path data for each sales channel segment (for custom donut chart)
   const paths = salesChannels.map((channel) => {
     const percentage = (channel.value / totalSales) * 100;
     const angleSize = (percentage / 100) * 360;
@@ -75,7 +90,7 @@ export default function TopSellingProductsAndTotalSales({
 
     const pathData = [
       `M ${x1} ${y1}`,
-      `A ${radius} ${radius} 0 ${largeArc} 1 ${x2} ${y2}`
+      `A ${radius} ${radius} 0 ${largeArc} 1 ${x2} ${y2}`,
     ].join(" ");
 
     const result = { pathData, color: channel.color, percentage };
@@ -127,7 +142,7 @@ export default function TopSellingProductsAndTotalSales({
                         $
                         {product.amount.toLocaleString("en-US", {
                           minimumFractionDigits: 2,
-                          maximumFractionDigits: 2
+                          maximumFractionDigits: 2,
                         })}
                       </td>
                     </tr>

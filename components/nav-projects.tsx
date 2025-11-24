@@ -5,13 +5,13 @@ import {
   MoreHorizontal,
   Folder,
   Settings2,
-  type LucideIcon
+  type LucideIcon,
 } from "lucide-react";
 
 import {
   Collapsible,
   CollapsibleContent,
-  CollapsibleTrigger
+  CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import {
   SidebarGroup,
@@ -23,17 +23,25 @@ import {
   SidebarMenuSub,
   SidebarMenuSubButton,
   SidebarMenuSubItem,
-  useSidebar
+  useSidebar,
 } from "@/components/ui/sidebar";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuTrigger
+  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
+/**
+ * NavProjects Component
+ *
+ * Renders the "Pages" section in the sidebar
+ * Supports both simple links and collapsible sub-menus
+ * - Items without sub-items: Rendered as simple navigation links
+ * - Items with sub-items: Rendered as collapsible accordion menus
+ */
 export function NavProjects({
-  pages
+  pages,
 }: {
   pages: {
     title: string;
@@ -53,7 +61,7 @@ export function NavProjects({
       <SidebarGroupLabel>Pages</SidebarGroupLabel>
       <SidebarMenu>
         {pages.map((item) => {
-          // If the item has no sub-items, render it like a project (simple link + icon)
+          // Simple link rendering: For pages without sub-items
           if (!item.items || item.items.length === 0) {
             return (
               <SidebarMenuItem key={item.title}>
@@ -67,6 +75,8 @@ export function NavProjects({
             );
           }
 
+          // Collapsible menu rendering: For pages with sub-items
+          // Chevron rotates 90° when expanded, sub-items appear below
           return (
             <Collapsible
               key={item.title}
@@ -104,93 +114,3 @@ export function NavProjects({
     </SidebarGroup>
   );
 }
-
-// "use client";
-
-// import {
-//   Folder,
-//   Forward,
-//   MoreHorizontal,
-//   Trash2,
-//   type LucideIcon
-// } from "lucide-react";
-
-// import {
-//   DropdownMenu,
-//   DropdownMenuContent,
-//   DropdownMenuItem,
-//   DropdownMenuSeparator,
-//   DropdownMenuTrigger
-// } from "@/components/ui/dropdown-menu";
-// import {
-//   SidebarGroup,
-//   SidebarGroupLabel,
-//   SidebarMenu,
-//   SidebarMenuAction,
-//   SidebarMenuButton,
-//   SidebarMenuItem,
-//   useSidebar
-// } from "@/components/ui/sidebar";
-
-// export function NavProjects({
-//   projects
-// }: {
-//   projects: {
-//     name: string;
-//     url: string;
-//     icon: LucideIcon;
-//   }[];
-// }) {
-//   const { isMobile } = useSidebar();
-
-//   return (
-//     <SidebarGroup className="group-data-[collapsible=icon]:hidden">
-//       <SidebarGroupLabel>Pages</SidebarGroupLabel>
-//       <SidebarMenu>
-//         {projects.map((item) => (
-//           <SidebarMenuItem key={item.name}>
-//             <SidebarMenuButton asChild>
-//               <a href={item.url}>
-//                 <item.icon className={"dark: text-white/30"} />
-//                 <span>{item.name}</span>
-//               </a>
-//             </SidebarMenuButton>
-//             <DropdownMenu>
-//               <DropdownMenuTrigger asChild>
-//                 <SidebarMenuAction showOnHover>
-//                   <MoreHorizontal />
-//                   <span className="sr-only">More</span>
-//                 </SidebarMenuAction>
-//               </DropdownMenuTrigger>
-//               {/* <DropdownMenuContent
-//                 className="w-48 rounded-lg"
-//                 side={isMobile ? "bottom" : "right"}
-//                 align={isMobile ? "end" : "start"}
-//               >
-//                 <DropdownMenuItem>
-//                   <Folder className="text-muted-foreground" />
-//                   <span>View Project</span>
-//                 </DropdownMenuItem>
-//                 <DropdownMenuItem>
-//                   <Forward className="text-muted-foreground" />
-//                   <span>Share Project</span>
-//                 </DropdownMenuItem>
-//                 <DropdownMenuSeparator />
-//                 <DropdownMenuItem>
-//                   <Trash2 className="text-muted-foreground" />
-//                   <span>Delete Project</span>
-//                 </DropdownMenuItem>
-//               </DropdownMenuContent> */}
-//             </DropdownMenu>
-//           </SidebarMenuItem>
-//         ))}
-//         {/* <SidebarMenuItem>
-//           <SidebarMenuButton className="text-sidebar-foreground/70">
-//             <MoreHorizontal className="text-sidebar-foreground/70" />
-//             <span>More</span>
-//           </SidebarMenuButton>
-//         </SidebarMenuItem> */}
-//       </SidebarMenu>
-//     </SidebarGroup>
-//   );
-// }

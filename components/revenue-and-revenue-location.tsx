@@ -1,19 +1,12 @@
 "use client";
 
-// import * as React from "react";
 import React from "react";
-import ProjectionsChart from "./charts/ProjectionsChart";
-import { TrendingDown, TrendingUp } from "lucide-react";
-import { BreadcrumbLink } from "./ui/breadcrumb";
 import { RevenueGraph } from "./charts/RevenueGraph";
 import RevenueByLocationStatic from "./location/RevenueByLocationStatic";
 
 export default function RevenueAndRevenueByLocation() {
   return (
     <section aria-label="ecommerce" className="space-y-4">
-      {/* <h3 className="text-lg font-semibold">eCommerce</h3> */}
-
-      {/* Layout: left = 2x2 stat cards, right = large chart */}
       <div className="grid grid-cols-1 gap-4 md:grid-cols-4 ">
         {/* Left: revenue header and chart (spans 3 columns on md+) */}
         <div className="md:col-span-3">
