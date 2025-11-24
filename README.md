@@ -110,6 +110,10 @@ enterprise-dashboard/
 
 ### 2. Dashboard > Default (`/dashboard`)
 
+![DashboardDarkMode](https://github.com/user-attachments/assets/eee2f806-af9a-4ace-897c-b0a88c43359b)
+
+![DashboardLightMode](https://github.com/user-attachments/assets/cf75e156-0b4a-42a7-b7f3-adb032e8bbd5)
+
 **Comprehensive eCommerce Analytics** - The main dashboard for detailed business insights.
 
 **Features:**
@@ -186,6 +190,10 @@ Features:
 - CSS custom properties for consistent theming
 
 ### 3. eCommerce > Order List (`/order-list`)
+
+![OrderListDarkMode](https://github.com/user-attachments/assets/a63749a5-16b9-44db-a001-c5d4c5521381)
+
+![OrderListLightMode](https://github.com/user-attachments/assets/043e8a5c-c63c-40a2-bf0e-14ba35ac4d26)
 
 **Advanced Order Management System** - Complete order tracking and management interface.
 
