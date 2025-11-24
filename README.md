@@ -36,7 +36,7 @@ yarn dev
 pnpm dev
 ```
 
-[Click here](https://enterprise-dashboard-hthtjyzoc-lassiecoders-projects.vercel.app/) to view the application.
+[Click here](https://enterprise-dashboard-lw60jp51g-lassiecoders-projects.vercel.app/) to view the application.
 
 ## 🏗️ Project Structure
 
